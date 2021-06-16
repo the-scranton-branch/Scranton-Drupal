@@ -1,0 +1,11 @@
+name: scranton-drupal
+recipe: pantheon
+config:
+  xdebug: false
+  # Solr
+  index: true
+  # Varnish
+  edge: false
+  # Redis
+  cache: true
+  webroot: .
