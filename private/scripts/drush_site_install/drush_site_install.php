@@ -8,10 +8,4 @@ $email = $_POST['user_email'];
 
 // Install from profile.
 echo "Installing default profile...\n";
-passthru('drush site:install demo_umami --account-mail ' . $email . ' --site-name ' . $title . ' --account-name superuser -y');
-echo "Import of configuration complete.\n";
-
-// Clear all cache
-echo "Rebuilding cache.\n";
-passthru('drush cr');
-echo "Rebuilding cache complete.\n";
+passthru('drush site:install demo_umami --account-mail="' . $email . '" --site-name="' . $title . '" --account-name superuser -y > /dev/null 2>&1 &');
