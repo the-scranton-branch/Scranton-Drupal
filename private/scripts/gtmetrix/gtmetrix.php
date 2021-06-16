@@ -8,7 +8,7 @@ use Entrecore\GTMetrixClient\GTMetrixTest;
 print("\n==== Start GTMetrix Report ====\n");
 
 // Check for Pantheon environment
-if (!empty($_ENV['PANTHEON_ENVIRONMENT']) && $_ENV['PANTHEON_ENVIRONMENT'] == 'live') {
+if (!empty($_ENV['PANTHEON_ENVIRONMENT']) && in_array($_ENV['PANTHEON_ENVIRONMENT'], ['test', 'live'])) {
   // Render Environment name with link to site, <https://{ENV}-{SITENAME}.pantheon.io|{ENV}>
   $url = 'https://' . $_ENV['PANTHEON_ENVIRONMENT'] . '-' . $_ENV['PANTHEON_SITE_NAME'] . '.pantheonsite.io';
 
@@ -36,7 +36,7 @@ if (!empty($_ENV['PANTHEON_ENVIRONMENT']) && $_ENV['PANTHEON_ENVIRONMENT'] == 'l
     'yslowScore' => $test->getYslowScore(),
   ];
 
-  print_r(get_object_vars($test));
+  print_r((array) get_object_vars($test));
 }
 
 print("\n==== End GTMetrix Report ====\n");
