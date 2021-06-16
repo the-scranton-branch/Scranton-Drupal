@@ -15,6 +15,7 @@ if (isset($_POST['environment'])) {
   // Get bindings
   $req = pantheon_curl('https://api.live.getpantheon.com/sites/self/environments/self/bindings', NULL, 8443);
   $bindings = json_decode($req['body'], true);
+  print_r($bindings);
   $nr = false;
   foreach ($bindings as $binding) {
     if ($bindings['type'] == 'newrelic') {
