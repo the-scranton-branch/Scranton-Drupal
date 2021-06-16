@@ -1,0 +1,13 @@
+{
+    "name": "kyletaylored/quicksilver-scripts",
+    "description": "Collection of Quicksilver Scripts",
+    "authors": [
+        {
+            "name": "Kyle Taylor",
+            "email": "kyletaylored@gmail.com"
+        }
+    ],
+    "require": {
+        "philcook/gtmetrix": "^1.0"
+    }
+}

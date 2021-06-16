@@ -3,7 +3,7 @@
 # Override the defaults specified here in a site-specific `pantheon.yml` file.
 # For more information see: https://pantheon.io/docs/pantheon-upstream-yml
 api_version: 1
-php_version: 7.3
+php_version: 7.4
 
 # See https://pantheon.io/docs/pantheon-yml/#enforce-https--hsts for valid values.
 enforce_https: transitional
@@ -20,3 +20,21 @@ protected_web_paths:
 # 'protected_web_paths_override' is set to true, then the upstream paths
 # are disabled.
 protected_web_paths_override: false
+
+# Drupal config
+drush_version: 10
+database:
+  version: 10.4
+
+# Quicksilver hooks
+workflows:
+    
+  # New site creation
+  deploy_product:
+    after:
+      - description: 'Install site profile'
+        script: private/scripts/drush_site_install/drush_site_install.php
+        type: webphp
+      - description: 'Post to Slack after each deploy'
+        script: private/scripts/slack/slack_notification.php
+        type: webphp
