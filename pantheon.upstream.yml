@@ -22,19 +22,21 @@ protected_web_paths:
 protected_web_paths_override: false
 
 # Drupal config
-drush_version: 10
+# drush_version: 10
 database:
   version: 10.4
 
 # Quicksilver hooks
 workflows:
-    
   # New site creation
   deploy_product:
     after:
-      - description: 'Install site profile'
+      - description: "Enable Pantheon settings"
+        script: private/scripts/pantheon/pantheon.php
+        type: webphp
+      - description: "Install site profile"
         script: private/scripts/drush_site_install/drush_site_install.php
         type: webphp
-      - description: 'Post to Slack after each deploy'
+      - description: "Post to Slack after each deploy"
         script: private/scripts/slack/slack_notification.php
         type: webphp
