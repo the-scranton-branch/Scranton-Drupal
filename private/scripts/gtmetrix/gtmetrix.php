@@ -36,30 +36,7 @@ if (!empty($_ENV['PANTHEON_ENVIRONMENT']) && $_ENV['PANTHEON_ENVIRONMENT'] == 'l
     'yslowScore' => $test->getYslowScore(),
   ];
 
-  var_dump($gtmetrix);
+  print_r(get_object_vars($test));
 }
-
-
-//   $client->attach([
-//     'fallback' => 'GTMetrix Page Performance',
-//     'text' => 'GTMetrix Page Performance',
-//     'color' => 'success',
-//     'fields' => [
-//       [
-//         'title' => 'Pagespeed Score',
-//         'value' => $pagespeedScore,
-//       ],
-//       [
-//         'title' => 'YSlow Score',
-//         'value' => $yslowScore,
-//       ]
-//     ]
-//   ])->attach([
-//     'fallback' => 'Report URL: ' . $reportUrl,
-//     'text' => 'Report URL: ' . $reportUrl,
-//     'color' => 'success',
-//     'mrkdwn_in' => ['text']
-//   ])->send('GTMetrix Report: ' . $_ENV['PANTHEON_SITE_NAME']);
-// }
 
 print("\n==== End GTMetrix Report ====\n");
