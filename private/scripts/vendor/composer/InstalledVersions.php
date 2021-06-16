@@ -25,24 +25,24 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-default',
-    'version' => 'dev-default',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => '2f760415e186b65500e722364a007c8cac0c079e',
+    'reference' => 'eb6d4f2fe44ff16fd1f16850a08d4b31fd36503c',
     'name' => 'kyletaylored/quicksilver-scripts',
   ),
   'versions' => 
   array (
     'kyletaylored/quicksilver-scripts' => 
     array (
-      'pretty_version' => 'dev-default',
-      'version' => 'dev-default',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => '2f760415e186b65500e722364a007c8cac0c079e',
+      'reference' => 'eb6d4f2fe44ff16fd1f16850a08d4b31fd36503c',
     ),
     'philcook/gtmetrix' => 
     array (
