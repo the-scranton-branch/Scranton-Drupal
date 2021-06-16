@@ -1,6 +1,6 @@
 <?php
 
-require($_SERVER['HOME'] . '/private/scripts/vendor/autoload.php');
+require(__DIR__ . '/../vendor/autoload.php');
 
 use Entrecore\GTMetrixClient\GTMetrixClient;
 use Entrecore\GTMetrixClient\GTMetrixTest;
